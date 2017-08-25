@@ -28,9 +28,45 @@ public class PlayerMove : MonoBehaviour {
 	
 	void Update ()
     {
-        MoveThePlayer ();
-        charController.Move (player_Move);
-	}
+        CalculateHeight ();
+        CheckIfFinishedMovement ();
+
+    }
+
+    bool IsGrounded ()
+    {
+        return collisionFlags == CollisionFlags.CollidedBelow ? true : false;
+    }
+
+    void CalculateHeight ()
+    {
+        if (IsGrounded())
+        {
+            height = 0f;
+        }
+        else
+        {
+            height -= gravity * Time.deltaTime;
+        }
+    }
+
+    void CheckIfFinishedMovement ()
+    {
+        if (!finished_Movement)
+        {
+            if (!anim.IsInTransition (0) && !anim.GetCurrentAnimatorStateInfo (0).IsName ("Stand") &&
+                anim.GetCurrentAnimatorStateInfo (0).normalizedTime >= 0.8f)
+            {
+                finished_Movement = true;
+            }
+        }
+        else
+        {
+            MoveThePlayer ();
+            player_Move.y = height * Time.deltaTime;
+            collisionFlags = charController.Move (player_Move);
+        }
+    }
 
     void MoveThePlayer ()
     {
@@ -50,7 +86,6 @@ public class PlayerMove : MonoBehaviour {
                     }
                 }
             }
-
         }
 
         if (canMove)
@@ -70,7 +105,6 @@ public class PlayerMove : MonoBehaviour {
         {
             player_Move.Set (0f, 0f, 0f);
             anim.SetFloat ("Walk", 0f);
-
         }
     }
 }
