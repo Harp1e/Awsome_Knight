@@ -185,7 +185,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &504540002
 Prefab:
@@ -224,16 +224,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4377270725192820, guid: 15c4f15e71268124b8f9341750b2fb4b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 95933509814091018, guid: 15c4f15e71268124b8f9341750b2fb4b,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 9f445b1997092a24a8c682ce5ee610f4, type: 2}
-    - target: {fileID: 4377270725192820, guid: 15c4f15e71268124b8f9341750b2fb4b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15c4f15e71268124b8f9341750b2fb4b, type: 2}
@@ -354,6 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorTexture: {fileID: 2800000, guid: c91538efd3f7c4f4b95cb37848e081b0, type: 3}
+  mousePoint: {fileID: 1189003024752632, guid: 7cae0becff6e14043b893feff8e4edc0, type: 2}
 --- !u!1001 &1652551099
 Prefab:
   m_ObjectHideFlags: 0
@@ -391,7 +383,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 477964, guid: 1f32365de5564434ea2b6ed925f0337a, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f32365de5564434ea2b6ed925f0337a, type: 2}
@@ -433,7 +425,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 452586, guid: 2e1da65fcf0be4cd2950bd26f57d5ad9, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e1da65fcf0be4cd2950bd26f57d5ad9, type: 2}

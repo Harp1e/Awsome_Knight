@@ -96,7 +96,7 @@ public class PlayerMove : MonoBehaviour {
                 Quaternion.LookRotation (target_Temp - transform.position),
                 15.0f * Time.deltaTime);
             player_Move = transform.forward * moveSpeed * Time.deltaTime;
-            if (Vector3.Distance (transform.position, target_Pos) <= 0.5f)
+            if (Vector3.Distance (transform.position, target_Pos) <= 0.1f)
             {
                 canMove = false;
             }
