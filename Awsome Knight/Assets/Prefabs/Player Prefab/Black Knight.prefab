@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 114585894633685842}
   - component: {fileID: 114013809915789122}
   - component: {fileID: 114171864021386864}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Black Knight
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -786,7 +786,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856892148873154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.189, y: 0.042, z: -25.268}
+  m_LocalPosition: {x: -7.49, y: 0.042, z: -25.268}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4335039006442544}

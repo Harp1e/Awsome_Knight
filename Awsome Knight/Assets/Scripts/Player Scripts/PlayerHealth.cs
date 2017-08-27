@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour 
 {
@@ -37,9 +38,8 @@ public class PlayerHealth : MonoBehaviour
                 if (!anim.IsInTransition (0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Death") &&
                     anim.GetCurrentAnimatorStateInfo (0).normalizedTime >= 0.95f)
                 {
-                    // Player died - reset - inform other gameobjects (enemies/camera etc)?
-
-                    //Destroy (gameObject, 2f);
+                    // Player died 
+                    SceneManager.LoadScene (0);
                 }
             }
         }

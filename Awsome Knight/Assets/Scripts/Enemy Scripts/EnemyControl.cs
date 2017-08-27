@@ -28,8 +28,8 @@ public class EnemyControl : MonoBehaviour
     Transform playerTarget;
     Vector3 initialPosition;
 
-    float move_Speed = 2f;
-    float walk_Speed = 1f;
+    //float move_Speed = 2f;
+    //float walk_Speed = 1f;
 
     CharacterController charController;
     Vector3 whereTo_Move = Vector3.zero;
@@ -38,7 +38,7 @@ public class EnemyControl : MonoBehaviour
     float waitAttackTime = 1f;
 
     Animator anim;
-    bool finished_Animation = true;
+    //bool finished_Animation = true;
     bool finished_Movement = true;
 
     NavMeshAgent navAgent;
@@ -161,7 +161,7 @@ public class EnemyControl : MonoBehaviour
             {
                 int atkRange = Random.Range (1, 3);
                 anim.SetInteger ("Atk", atkRange);
-                finished_Animation = false;
+                //finished_Animation = false;
                 currentAttackTime = 0f;
             }
             else

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 114213434628052040}
   - component: {fileID: 114859683857854736}
   - component: {fileID: 114551995673984346}
+  - component: {fileID: 114676943422591206}
+  - component: {fileID: 114264053319947710}
   m_Layer: 8
   m_Name: Skeleton Boss
   m_TagString: Boss
@@ -1727,6 +1729,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114264053319947710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ecf7a2d2c004345993c8a4946398dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
 --- !u!114 &114551995673984346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1738,6 +1752,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2171bae79905741aac861948316f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114676943422591206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e7ae796115e5e4d9399da7ee78fd0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossFire: {fileID: 1921226214802806, guid: 3809a810cd8104c2298ed6df026d4e23, type: 2}
+  bossMagic: {fileID: 1623750204401448, guid: 1319d9c3877eb41218bfb2b89a7d7276, type: 2}
 --- !u!114 &114802330765692408
 MonoBehaviour:
   m_ObjectHideFlags: 1
