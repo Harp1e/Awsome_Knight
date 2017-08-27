@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour 
 {
@@ -8,21 +9,49 @@ public class PlayerHealth : MonoBehaviour
 
     bool isShielded;
 
-	public bool Shielded
+    Animator anim;
+    Image health_Img;
+
+    void Awake ()
+    {
+        anim = GetComponent<Animator> ();
+        health_Img = GameObject.Find ("Health Icon").GetComponent<Image> ();
+    }
+
+    public bool Shielded
     {
         get { return isShielded; }
         set { isShielded = value; }
     }
 	
-	void TakeDamage (float amount) 
+	public void TakeDamage (float amount) 
 	{
         if (!isShielded)
         {
             health -= amount;
+            health_Img.fillAmount = health / 100f;
+
             if (health <= 0f)
             {
-                // player dies
+                anim.SetBool ("Death", true);
+                if (!anim.IsInTransition (0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Death") &&
+                    anim.GetCurrentAnimatorStateInfo (0).normalizedTime >= 0.95f)
+                {
+                    // Player died - reset - inform other gameobjects (enemies/camera etc)?
+
+                    //Destroy (gameObject, 2f);
+                }
             }
         }
+    }
+
+    public void HealPlayer (float healAmount)
+    {
+        health += healAmount;
+        if (health > 100f)
+        {
+            health = 100f;
+        }
+        health_Img.fillAmount = health / 100f;
     }
 }

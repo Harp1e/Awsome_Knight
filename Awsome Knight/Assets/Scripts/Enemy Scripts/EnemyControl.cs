@@ -44,7 +44,7 @@ public class EnemyControl : MonoBehaviour
     NavMeshAgent navAgent;
     Vector3 whereTo_Navigate;
 
-    // Health Script
+    EnemyHealth enemyHealth;
 
     void Awake () 
 	{
@@ -55,11 +55,16 @@ public class EnemyControl : MonoBehaviour
 
         initialPosition = transform.position;
         whereTo_Navigate = transform.position;
+
+        enemyHealth = GetComponent<EnemyHealth> ();
 	}
 	
 	void Update () 
 	{
-        // If Health <= 0 Set state to DEATH
+        if (enemyHealth.health <= 0f)
+        {
+            enemy_CurrentState = EnemyState.DEATH;
+        }
 
         if (enemy_CurrentState != EnemyState.DEATH)
         {

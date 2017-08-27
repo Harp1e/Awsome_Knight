@@ -19,15 +19,38 @@ public class EnemyControlAnotherWay : MonoBehaviour
 
     Vector3 nextDestination;
 
+    EnemyHealth enemyHealth;
+
 	void Awake () 
 	{
         playerTarget = GameObject.FindGameObjectWithTag ("Player").transform;
         anim = GetComponent<Animator> ();
         navAgent = GetComponent<NavMeshAgent> ();
+        enemyHealth = GetComponent<EnemyHealth> ();
 	}
 	
-	void Update () 
-	{
+	void Update ()
+    {
+        if (enemyHealth.health > 0)
+        {
+            MoveAndAttack ();
+        }
+        else
+        {
+            anim.SetBool ("Death", true);
+            navAgent.enabled = false;
+
+            if (!anim.IsInTransition (0) && anim.GetCurrentAnimatorStateInfo (0).IsName ("Death")
+                && anim.GetCurrentAnimatorStateInfo (0).normalizedTime >= 0.95f)
+            {
+                Destroy (gameObject, 2f);
+            }
+        }
+
+    }
+
+    private void MoveAndAttack ()
+    {
         float distance = Vector3.Distance (transform.position, playerTarget.position);
         if (distance > walk_Distance)
         {
@@ -67,7 +90,7 @@ public class EnemyControlAnotherWay : MonoBehaviour
                 anim.SetBool ("Run", false);
                 Vector3 targetPosition = new Vector3 (playerTarget.position.x, transform.position.y,
                     playerTarget.position.z);
-                transform.rotation = Quaternion.Slerp (transform.rotation, 
+                transform.rotation = Quaternion.Slerp (transform.rotation,
                     Quaternion.LookRotation (targetPosition - transform.position), 5f * Time.deltaTime);
                 if (currentAttackTime >= waitAttackTime)
                 {
@@ -82,5 +105,5 @@ public class EnemyControlAnotherWay : MonoBehaviour
                 }
             }
         }
-	}
+    }
 }
