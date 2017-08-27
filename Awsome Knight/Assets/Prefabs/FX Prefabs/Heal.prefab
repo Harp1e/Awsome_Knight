@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4586971666586262}
   - component: {fileID: 114084508748355886}
+  - component: {fileID: 114823065980540174}
   m_Layer: 0
   m_Name: Heal
   m_TagString: Untagged
@@ -145,6 +146,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 4.5
+--- !u!114 &114823065980540174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820702659360474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50648e7227c305d42933932b788c7af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healAmount: 20
 --- !u!198 &198108957805475572
 ParticleSystem:
   m_ObjectHideFlags: 1

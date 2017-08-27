@@ -476,6 +476,7 @@ GameObject:
   - component: {fileID: 114480712412507120}
   - component: {fileID: 114585894633685842}
   - component: {fileID: 114013809915789122}
+  - component: {fileID: 114171864021386864}
   m_Layer: 0
   m_Name: Black Knight
   m_TagString: Player
@@ -2154,6 +2155,17 @@ MonoBehaviour:
     type: 2}
   thunderFX_Prefab: {fileID: 1164094381172014, guid: d52235af7d56d4f148d6e52c8bc2c348,
     type: 2}
+--- !u!114 &114171864021386864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1856892148873154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6810ad928a3bad4d99f1ccce2af80df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114480712412507120
 MonoBehaviour:
   m_ObjectHideFlags: 1

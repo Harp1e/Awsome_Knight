@@ -24,6 +24,7 @@ public class SkillDamage : MonoBehaviour
         if (collided)
         {
             enemyHealth.TakeDamage (damageCount);
+            enabled = false;
         }
 	}
 }
