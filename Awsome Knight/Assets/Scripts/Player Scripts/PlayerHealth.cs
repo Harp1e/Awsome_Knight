@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     {
         anim = GetComponent<Animator> ();
         health_Img = GameObject.Find ("Health Icon").GetComponent<Image> ();
+        Time.timeScale = 1f;
     }
 
     public bool Shielded
@@ -36,10 +37,9 @@ public class PlayerHealth : MonoBehaviour
             {
                 anim.SetBool ("Death", true);
                 if (!anim.IsInTransition (0) && anim.GetCurrentAnimatorStateInfo(0).IsName("Death") &&
-                    anim.GetCurrentAnimatorStateInfo (0).normalizedTime >= 0.95f)
+                    anim.GetCurrentAnimatorStateInfo (0).normalizedTime >= 0.5f)
                 {
-                    // Player died 
-                    SceneManager.LoadScene (0);
+                    StartCoroutine (KillPlayer ());
                 }
             }
         }
@@ -53,5 +53,12 @@ public class PlayerHealth : MonoBehaviour
             health = 100f;
         }
         health_Img.fillAmount = health / 100f;
+    }
+
+    IEnumerator KillPlayer ()
+    {
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime (2f);
+        SceneManager.LoadScene (0);
     }
 }

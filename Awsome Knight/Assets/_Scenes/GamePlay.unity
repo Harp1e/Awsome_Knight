@@ -718,6 +718,11 @@ Prefab:
       propertyPath: fillWaitImage_6
       value: 
       objectReference: {fileID: 631830114}
+    - target: {fileID: 114171864021386864, guid: 15c4f15e71268124b8f9341750b2fb4b,
+        type: 2}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15c4f15e71268124b8f9341750b2fb4b, type: 2}
   m_IsPrefabParent: 0
